@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Можиловский Артем Сергеевич</h2>
+        <h2>ИПР1 Вариант 19</h2>
+        <h2>Номер зачетной книжки 79105018</h2>
+        <h2>Группа 791051</h2>
+
+        <div>
+            <h3 class="task" style="color: rgb(97, 218, 251);">
+                Шифратор Виженера для русскоязычных текстов и самогенерирующегося ключа
+                (Auto Key). Ключевое слово задается пользователем с клавиатуры. Текст читать из файла. Программа должна шифровать только символы заданного алфавита, игнорируя все
+                другие символы. Программа не должна быть реализована в консольном режиме.
+            </h3>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h1>Шифратор</h1>
+            <textarea id='eText'></textarea>
+            <textarea id='eTextOut' class='out' disabled></textarea>
+            <input class="" type="file" onchange="readFileEncode(this)">
+            <br>
+            <label for="eKey">Auto Key</label>
+            <input class="inputs" type="text" id='eKey'>
+            <button id='encodeButton'>Зашифровать</button>
+        </section>
+        <div>
+            
+        </div>
+        <h2>Метрика</h2>
+        <p>Исходный текст</p>
+        <div id='g1' class="gistogramm">
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+        </div>
+        <p>Зашифрованный текст</p>
+        <div id='g2' class="gistogramm">
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+        </div>
+        <section>
+            <h1>Дешифратор</h1>
+            <textarea id='dText'></textarea>
+            <textarea id='dTextOut' class='out' disabled></textarea>
+            <input class="" type="file" onchange="readFileDecode(this)">
+            <br>
+            <label for="dKey">Auto Key</label>
+            <input class="inputs" type="text" id='dKey'>
+            <button id='decodeButton'>Расшифровать</button>
+        </section>
+
+
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>

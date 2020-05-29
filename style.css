@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #282C34;
+}
+
+h1, h2 {
+    color: rgb(97, 218, 251);
+}
+
+main {
+    width: 60vw;
+    margin: auto;
+    font-size: 16px;
+    color: #f8fefb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    text-align: center;
+}
+
+.task {
+    width: 600px;
+    margin: 30px auto;
+}
+#g1 {
+    margin: 20px auto;
+}
+
+
+.inputs {
+    height: 42px;
+    font-size: 22px;
+    font-weight: bold;
+    outline: none;
+    padding: 0px 12px;
+    border: none;
+    border-radius: 12px;
+    background: #e6e6e6a6;
+}
+
+button {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #599bb3;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 32px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+    outline: none;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color: #408c99;
+}
+
+section {
+    text-align: center;
+}
+
+textarea {
+    width: 45%;
+    height: 20vh;
+    resize: none;
+    font-family: "Courier New", Courier, monospace;
+    background: #e6e6e6a6;
+    margin: 5px 10px;
+    font-size: inherit;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.out {
+    color: honeydew;
+    background: #8c8888a6;
+}
+
+.mirror {
+    transform: scaleX(-1);
+}
+
+.gistogramm {
+    display: flex;
+    min-height: 40px;
+    justify-content: space-between;
+}
+
+.gistogramm div {
+    width: 18px;
+    align-self: flex-end;
+    display: flex;
+}
+
+.gistogramm span {
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+#g1 div {
+    margin: 0 5px;
+    width: 30px;
+    background-color: green;
+}
+
+#g2 div {
+    margin: 0 5px;
+    width: 30px;
+    background-color: red;
+}
