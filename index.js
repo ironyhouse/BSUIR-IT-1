@@ -39,15 +39,23 @@ function Vigenere() {
         let divs = document.querySelectorAll('#g1 div');
         let val = Object.values(gist1);
 
+        function getMaxOfArray(numArray) {
+            return Math.max.apply(null, numArray);
+        }
+        let maxValue = getMaxOfArray(val);
+
+
+        
+
         let divs2 = document.querySelectorAll('#g2 div')
         let val2 = Object.values(gist2);
 
         for (let i = 0; i < divs.length; i++) {//вывод гистограмм 
             divs[i].firstChild.innerText = val[i] + ' ' + arrAlphabet[i];
-            divs[i].style.height = val[i] * 0.1 + 'px';
+            divs[i].style.height = val[i] * 300 / maxValue + 'px';
 
             divs2[i].firstChild.innerText = val2[i] + ' ' + arrAlphabet[i];
-            divs2[i].style.height = val2[i] * 0.1 + 'px';
+            divs2[i].style.height = val2[i] * 300 / maxValue + 'px';
         }
         // Запись в файл
         outText = outText.join('');
