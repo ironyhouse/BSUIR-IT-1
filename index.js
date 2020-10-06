@@ -60,6 +60,22 @@ function Vigenere() {
         // Запись в файл
         outText = outText.join('');
 
+
+        const saveTextFile = function (content) {
+            const a = document.createElement('a'); // создаём элемент для инициации скачивания файла далее
+            const blob = new Blob([content], {type: 'text/plain'}); // создаём бинарный объект
+          
+            a.style = 'display: none'; // делаем элемент-ссылку невидимой
+            const url = window.URL.createObjectURL(blob); // создаём ссылку на бинарный объект
+            a.href = url; // устанавливаем элементу-ссылке ссылку на файл
+            a.download = 'result.txt'; // включаем загрузку файла по клику и задаём имя скачиваемого файла
+            document.body.appendChild(a); // добавляем ссылку на файл в DOM-дерево документа
+            a.click(); // эмулируем клик по ссылку
+            document.body.removeChild(a); // ссылка более не нужна, удаляем её из DOM-дерева документа
+            window.URL.revokeObjectURL(url); // очищаем ссылку на бинарный файл
+          };
+          saveTextFile(outText)
+
         return outText;  
     };
     this.decode = function (inputText, inputKey) {
@@ -100,6 +116,22 @@ function Vigenere() {
         }
         // Запись в файл
         outText = outText.join('');
+
+
+        const saveTextFile = function (content) {
+            const a = document.createElement('a'); // создаём элемент для инициации скачивания файла далее
+            const blob = new Blob([content], {type: 'text/plain'}); // создаём бинарный объект
+            
+            a.style = 'display: none'; // делаем элемент-ссылку невидимой
+            const url = window.URL.createObjectURL(blob); // создаём ссылку на бинарный объект
+            a.href = url; // устанавливаем элементу-ссылке ссылку на файл
+            a.download = 'result.txt'; // включаем загрузку файла по клику и задаём имя скачиваемого файла
+            document.body.appendChild(a); // добавляем ссылку на файл в DOM-дерево документа
+            a.click(); // эмулируем клик по ссылку
+            document.body.removeChild(a); // ссылка более не нужна, удаляем её из DOM-дерева документа
+            window.URL.revokeObjectURL(url); // очищаем ссылку на бинарный файл
+        };
+        saveTextFile(outText)
 
         return outText;
     } 
@@ -156,3 +188,90 @@ function readFileDecode(input) {
     };
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// form.addEventListener('submit', function (ev) { // навешиваем свой обработчик на отправку формы
+//     ev.preventDefault() // отключаем стандартное поведение отправки формы
+//     processForm(
+//       ev.target.querySelectorAll('input')[0], // получаем ссылку на файл
+//       ev.target.querySelectorAll('input')[1] // получаем ссылку на кодовое слово
+//     ) // инициируем обработку файла
+//   });
+
+
+// const readFileContent = function(file) {
+//     const reader = new FileReader()
+//     return new Promise((resolve, reject) => {
+//       reader.onload = event => resolve(event.target.result)
+//       reader.onerror = error => reject(error)
+//       reader.readAsText(file)
+//     });
+//   }
+
+//   const saveTextFile = function (content) {
+//     const a = document.createElement('a'); // создаём элемент для инициации скачивания файла далее
+//     const blob = new Blob([content], {type: 'text/plain'}); // создаём бинарный объект
+  
+//     a.style = 'display: none'; // делаем элемент-ссылку невидимой
+//     const url = window.URL.createObjectURL(blob); // создаём ссылку на бинарный объект
+//     a.href = url; // устанавливаем элементу-ссылке ссылку на файл
+//     a.download = 'result.txt'; // включаем загрузку файла по клику и задаём имя скачиваемого файла
+//     document.body.appendChild(a); // добавляем ссылку на файл в DOM-дерево документа
+//     a.click(); // эмулируем клик по ссылку
+//     document.body.removeChild(a); // ссылка более не нужна, удаляем её из DOM-дерева документа
+//     window.URL.revokeObjectURL(url); // очищаем ссылку на бинарный файл
+//   };
+
+
+//   const processForm = function(fileInput, keywordInput) {
+//     // валидируем файл
+//     // if (!('files' in fileInput && fileInput.files.length > 0)) {
+//     //   alert('Не выбран файл для шифрования')
+//     //   return
+//     // }
+  
+//     // удаляем все невалидные символы (не из целевого алфавита)
+//     // const keyword = keywordInput.value.replace(new RegExp("\\W", 'g'), '');
+//     // if (!(typeof keyword === 'string' && keyword.length > 0)) {
+//     //   alert('Не заполнено ключевое слово')
+//     //   return
+//     // }
+//     // keywordInput.value = keyword; // заполняем поле нормализованным значением ключевого слова
+  
+//     // отправляем файл на обработку, если всё в порядке
+//     readFileContent(fileInput.files[0]).then(content => {
+//       const result = encryptPorto(content, keyword)
+//       saveTextFile(result)
+//     }).catch(error => console.log(error))
+//   }
